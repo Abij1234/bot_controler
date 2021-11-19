@@ -45,6 +45,7 @@ read id
 while true; do
 printf "\033[1;34mMESSAGE==> \033[0m"
 read message
+message=${message//" "/%20}
 curl "https://api.telegram.org/bot${token}/sendMessage?chat_id=${id}?&text=${message}" > /dev/null 2>&1
 echo
 printf "\033[1;31mMESSAGE SENDED \033[0m\n"
@@ -66,6 +67,7 @@ echo
 while true; do
 printf "\033[1;34mMESSAGE==> \033[0m"
 read mess
+mess=${mess//" "/%20}
 curl curl "https://api.telegram.org/bot${Ntoken}/sendMessage?chat_id=${Nid}?&text=${mess}" > /dev/null 2>&1
 echo
 printf "\033[1;31mMESSAGE SENDED \033[0m\n"
